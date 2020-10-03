@@ -31,41 +31,56 @@ def merge_sort(number_list : list) -> None:
     RETURN
     no return
     """
-    recursive_merge_sort(number_list, 0, len(number_list)-1)
+    recursive_merge_sort(number_list, 0, len(number_list))
 
 
-def recursive_merge_sort(number_list, start_index, end_index):
-    if start_index < end_index:
+def recursive_merge_sort(number_list : list, start_index : int, end_index : int) -> None:
+    """
+    DESCRIPTION
+    A recursive function that splits a list in two, and combines the sorted values
+
+    PARAMETERS
+    number_list: The list of numbers to sort
+    start_index: The index to start the split at
+    end_index: The index to end the split at
+
+    RETURN
+    no return
+    """
+    if (end_index - start_index) > 1:
         middle_index = (start_index + end_index) // 2
         recursive_merge_sort(number_list, start_index, middle_index)
-        recursive_merge_sort(number_list, middle_index + 1, end_index)
+        recursive_merge_sort(number_list, middle_index, end_index)
         merge(number_list, start_index, middle_index, end_index)
 
-def merge(number_list, start_index, middle_index, end_index):
-    left_end_index = middle_index - start_index
-    right_end_index = end_index - middle_index
-    left_hand = []
-    right_hand = []
-    for i in range(0, left_end_index):
-        left_hand.append(number_list[start_index + i])
-    for j in range(0, right_end_index):
-        right_hand.append(number_list[middle_index + j])
+def merge(number_list : list, start_index : int, middle_index : int, end_index : int) -> None:
+    """
+    DESCRIPTION
+    sorts the values of two sublists and merges them in sorted order
+    into the original list
 
-    print("Merging: " + str(left_hand) + " " + str(right_hand))
+    PARAMETERS
+    number_list: The list of numbers to sort
+    start_index: The index to start the left list at
+    middle_index: The index to end the left list at and start the right list at
+    end_index: The index to end the right list at
 
-    left_hand.append(math.inf)
-    right_hand.append(math.inf)
+    RETURN
+    no return
+    """
+    left = number_list[start_index : middle_index]
+    right = number_list[middle_index : end_index]
 
-    
+    # Use negative infinity as sentinel values
+    left.append(-math.inf)
+    right.append(-math.inf)
 
     left_index = 0
     right_index = 0
     for index in range(start_index, end_index):
-        if left_hand[left_index] <= right_hand[right_index]:
-            number_list[index] = left_hand[left_index]
+        if left[left_index] >= right[right_index]:
+            number_list[index] = left[left_index]
             left_index += 1
         else:
-            number_list[index] = right_hand[right_index]
+            number_list[index] = right[right_index]
             right_index += 1
-    
-
