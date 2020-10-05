@@ -2,8 +2,10 @@ CS_235_Homework_1 : Alex Munoz
 
 
 DESCRIPTION
-Graphs the running times of insertion sort and merge sort algorithms that sort data from a text file in descending order.
-The data.txt file must be in the same directory
+1. Sorts a list of number values from a file called data.txt, each line in the data file must contain only integers, & the first number being the size of the list. The data.txt file must be in the same directory
+
+2. Calculates the running times of insertion sort and merge sort algorithms that sort data from randomly generated lists of size N. The results are printed to the console. NOTE: I used a sample size of 10 for my written homework submission, but reduced it to 2 so it will run faster for the TAs
+
 
 FILES
 
