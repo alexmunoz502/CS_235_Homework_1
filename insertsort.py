@@ -1,9 +1,11 @@
 import file_handler
 import algorithms
+import os
 
 # CONSTANTS
-FILE_PATH = "data.txt"
-INSERT_OUT_PATH = "insert.out"
+DIRECTORY = os.path.dirname(__file__)
+FILE_PATH = os.path.join(DIRECTORY, "data.txt")
+INSERT_OUT_PATH = os.path.join(DIRECTORY, "insert.out")
 
 if __name__ == "__main__":
     data_list = file_handler.read_data_from_file(FILE_PATH)

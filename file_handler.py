@@ -26,10 +26,9 @@ def read_data_from_file(file_name : str) -> list:
 def write_data_to_file(data : list, file_name : str) -> None:
     """
     DESCRIPTION
-    Writes sorted list data to a specified filename. The data
-    will be written in the format {list size} {elements}
+    Writes sorted list data to a specified filename.
     for example a list of [1, 2, 3] will be written as:
-    3 1 2 3
+    1 2 3
     each line in the file will correlate to a list in the data 
     parameter
 
