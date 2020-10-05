@@ -14,9 +14,14 @@ random.seed()
 sample_size = 10 # how many times to run each size sorting to get an average time
 runtimes = {
     5000 : [],
+    7500 : [],
     10000 : [],
+    12500 : [],
     15000 : [],
-    20000 : []
+    17500 : [],
+    20000 : [],
+    22500 : [],
+    25000 : [],
 }
 
 def generate_random_values(list_size : int) -> list:
@@ -29,9 +34,9 @@ for i in range(1, sample_size+1):
     print("Running Algorithm, iteration " + str(i) +" of " + str(sample_size))
     for list_size in runtimes.keys():
         list_of_values = generate_random_values(list_size)
-        start_time = time.time()
+        start_time = time.perf_counter()
         algorithms.insertion_sort(list_of_values)
-        end_time = time.time()
+        end_time = time.perf_counter()
         time_elapsed = (end_time - start_time)
         print("INSERTION SORT: Sorted list of " + str(list_size) + " values in " + str(time_elapsed) + " seconds.")
         runtimes[list_size].append(time_elapsed)
