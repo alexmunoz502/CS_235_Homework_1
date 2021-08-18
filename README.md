@@ -29,9 +29,9 @@ Contains the functions for the insertion sort and merge sort algorithms.
 *insert_time.py* and *merge_time.py*  
 These get the average runtime for an algorithm for list sizes of N. Optional
 argument can be provided to override the default sample size of 3.  
-  Example:
+  Example:  
   `py merge_time.py 5`  
-The results will be logged to the terminal. NOTE: This process can take some 
+  The results will be logged to the terminal. NOTE: This process can take some 
 time, it is recommended to keep the sample size under 10.
 
 *algo_timer.py*  
