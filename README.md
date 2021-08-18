@@ -14,6 +14,11 @@ an algorithm to sort a number of large arrays.
 
 ###### FILES
 
+*data.txt*  
+This file contains the data that will be read by the sorting scripts. Each 
+new line in the file will be read as a separate array. Each line contains
+integers delimited by a space character.
+
 *insert_sort.py* and *merge_sort.py*  
 These read data from the data.txt file, sort the data in _descending_ order, 
 and then write the sorted data out to *insert.out* and *merge.out*, 
