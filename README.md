@@ -1,5 +1,5 @@
-## Sorting Algorithms
-##### Python Scripts for Sorting Algorithms
+## Timing Sorting Algorithms
+##### Python Scripts for Analyzing Sorting Algorithm Runtimes
 
 
 ###### DESCRIPTION
