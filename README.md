@@ -1,28 +1,39 @@
-CS_235_Homework_1 : Alex Munoz
+## Sorting Algorithms
+##### Python Scripts for Sorting Algorithms
 
 
-DESCRIPTION
-1. Sorts a list of number values from a file called data.txt, each line in the data file must contain only integers, & the first number being the size of the list. The data.txt file must be in the same directory
+###### DESCRIPTION
 
-2. Calculates the running times of insertion sort and merge sort algorithms that sort data from randomly generated lists of size N. The results are printed to the console. NOTE: I used a sample size of 10 for my written homework submission, but reduced it to 2 so it will run faster for the TAs
+There are two main functionalities to the scripts in this project:
 
+1. Sorting: these scripts can be used to sort a data file containing integers
+in _descending_ order, and output their results to a new file.  
 
-FILES
+2. Timing: these scripts can be used to evaluate the average time it takes for
+an algorithm to sort a number of large arrays.  
 
-insertsort.py and mergesort.py
-PROBLEM #4 HOMEWORK files
-These use the file_handler.py and algorithms.py functions to read data from the data.txt file, sort the data, and then write the data out to their respective '.out' files.
+###### FILES
 
-file_handler.py 
-Wraps the reading/writing of code to text files into functions that can be called from outside of the file.
+*insert_sort.py* and *merge_sort.py*  
+These read data from the data.txt file, sort the data in _descending_ order, 
+and then write the sorted data out to *insert.out* and *merge.out*, 
+resepectively. 
 
-algorithms.py 
-Contains the functions for the insertion sort and merge sort algorithms
+*file_handler.py*  
+A set of basic file-handling functions for the reading/writing of text 
+files that can be called by the other scripts in this project.
 
-insertTime.py and mergeTime.py
-PROBLEM #5 HOMEWORK files
-These utilize the algorithms.py and algo_timer.py functions to get the average runtime for an algorithm for list sizes of N
+*algorithms.py*  
+Contains the functions for the insertion sort and merge sort algorithms.
 
-algo_timer.py
-This function generates a list of randomly generated numbers and has a function which calls a specified sorting algorithm and times
-how long it takes to run the sorting algorithm on each list of size N
+*insert_time.py* and *merge_time.py*  
+These get the average runtime for an algorithm for list sizes of N. Optional
+argument can be provided to override the default sample size of 3.  
+  Example:
+  `py merge_time.py 5`  
+The results will be logged to the terminal. NOTE: This process can take some 
+time, it is recommended to keep the sample size under 10.
+
+*algo_timer.py*  
+This function generates a list of randomly generated numbers and has a 
+reference to a specified sorting algorithm that is called and timed.
